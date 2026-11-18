@@ -1,0 +1,3 @@
+# Eval-set SHA is computed from raw bytes. Preserve those bytes when committing
+# on Windows and checking out on Linux CI; line-ending conversion changes SHA.
+src/data/eval/*.jsonl -text

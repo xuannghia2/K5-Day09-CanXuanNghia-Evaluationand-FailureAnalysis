@@ -1,5 +1,11 @@
 # K5 · Day 9 · Lab — Evaluation & Failure Analysis (LogiX-VN)
 
+Bài làm Cấn Xuân Nghĩa: xem [hướng dẫn chạy và nộp](HUONG_DAN_NOP.md),
+[eval card](docs/eval_card.md), [mô tả PR](PR_DESCRIPTION.md) và
+[log kiểm tra](src/reports/verification.log).
+Chạy lại toàn bộ: `python scripts/verify_submission.py`, sau đó
+`python scripts/build_submission_docs.py` (dùng Python trong môi trường đã cài requirements).
+
 > Nối tiếp Lab 8. Lab 8 trả lời "agent có chạy không"; Lab 9 trả lời **"làm sao biết bản mới tốt hơn — và chặn được bản tệ trước khi merge"**.
 > Không cần API key: MockLLM + judge replay. **Không Langfuse / OTel** (observability học ở Day 14).
 

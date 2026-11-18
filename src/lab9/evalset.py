@@ -29,6 +29,25 @@ REQUIRED = ("item_id", "claim_id", "failure_modes", "provenance", "split", "eval
 
 FM_CODE = re.compile(r"FM-\d{2}")
 
+# Coverage describes the failure the case probes, not a claim that every run
+# fails. Controls (missing order, foreign principal) also test safe refusal.
+CASE_MODES = {
+    "T01": ["FM-01", "FM-04"],
+    "T02": ["FM-03"],
+    "T03": ["FM-04"],
+    "T04": ["FM-01", "FM-02"],
+    "T05": ["FM-01", "FM-09"],
+    "T06": ["FM-06"],
+    "T07": ["FM-02"],
+    "T08": ["FM-05", "FM-08"],
+    "T09": ["FM-02", "FM-03"],
+    "T10": ["FM-01", "FM-07"],
+    "T11": ["FM-07"],
+    "T12": ["FM-07"],
+    "T13": ["FM-02", "FM-05"],
+    "T14": ["FM-04", "FM-05", "FM-08"],
+}
+
 
 def load_jsonl(path: Path) -> list[dict[str, Any]]:
     return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
@@ -46,8 +65,7 @@ def build(source: Path = SOURCE) -> tuple[int, int]:
         items.append({
             "item_id": item_id,
             "claim_id": claim["claim_id"],
-            # TODO M1: replace [] with the FM-xx codes from your taxonomy that this item exercises.
-            "failure_modes": [],
+            "failure_modes": CASE_MODES.get(claim.get("matrix_id"), []),
             "provenance": {"source": "lab8_public", "matrix_id": claim.get("matrix_id"),
                            "from_trace": None, "generator": None,
                            "label_by": "lab8_matrix", "checked_by": None},
