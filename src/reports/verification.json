@@ -1,0 +1,417 @@
+[
+  {
+    "command": [
+      "lab9.smoke"
+    ],
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "command": [
+      "lab9.evalset",
+      "--build",
+      "--check"
+    ],
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "command": [
+      "lab9.evalset",
+      "--v2",
+      "--build"
+    ],
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "command": [
+      "pytest",
+      "-q",
+      "-o",
+      "addopts=",
+      "tests/test_lab9_stats.py",
+      "tests/test_lab9_graders.py",
+      "tests/test_lab9_advanced.py",
+      "tests/test_lab9_evalset.py",
+      "tests/test_lab9_regressions.py",
+      "tests/test_swarm_reference.py"
+    ],
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "command": [
+      "lab9.judge",
+      "--csv",
+      "data/eval/judge_tone_public.csv",
+      "--audit",
+      "10"
+    ],
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "command": [
+      "lab9.judge",
+      "--csv",
+      "data/eval/judge_helpful_public.csv",
+      "--audit",
+      "5"
+    ],
+    "exit": 1,
+    "expected": 1
+  },
+  {
+    "command": [
+      "lab9.eval",
+      "--shape",
+      "swarm",
+      "--out",
+      "reports/baseline_v1.json"
+    ],
+    "exit": 0,
+    "expected": 0,
+    "reused": true
+  },
+  {
+    "command": [
+      "lab9.gate",
+      "--pr",
+      "reports/baseline_v1.json",
+      "--baseline",
+      "reports/baseline_v1.json",
+      "--base-spec",
+      "config/metric_spec.yaml"
+    ],
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "command": [
+      "lab9.eval",
+      "--shape",
+      "fixed",
+      "--out",
+      "reports/eval_fixed.json"
+    ],
+    "exit": 0,
+    "expected": 0,
+    "reused": true
+  },
+  {
+    "command": [
+      "lab9.gate",
+      "--pr",
+      "reports/eval_fixed.json",
+      "--baseline",
+      "reports/baseline_v1.json",
+      "--base-spec",
+      "config/metric_spec.yaml"
+    ],
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "command": [
+      "lab9.eval",
+      "--shape",
+      "seeded_regression",
+      "--out",
+      "reports/eval_seeded_regression.json"
+    ],
+    "exit": 0,
+    "expected": 0,
+    "reused": true
+  },
+  {
+    "command": [
+      "lab9.gate",
+      "--pr",
+      "reports/eval_seeded_regression.json",
+      "--baseline",
+      "reports/baseline_v1.json",
+      "--base-spec",
+      "config/metric_spec.yaml"
+    ],
+    "exit": 1,
+    "expected": 1
+  },
+  {
+    "command": [
+      "lab9.ci_check",
+      "--pr",
+      "reports/baseline_v1.json",
+      "--baseline",
+      "reports/baseline_v1.json"
+    ],
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "command": [
+      "lab9.mutation",
+      "--detect"
+    ],
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "command": [
+      "lab9.eval",
+      "--shape",
+      "swarm",
+      "--spec",
+      "config/metric_spec_v2.yaml",
+      "--out",
+      "reports/baseline_v2.json"
+    ],
+    "exit": 0,
+    "expected": 0,
+    "reused": true
+  },
+  {
+    "command": [
+      "lab9.gate",
+      "--pr",
+      "reports/baseline_v2.json",
+      "--baseline",
+      "reports/baseline_v2.json",
+      "--spec",
+      "config/metric_spec_v2.yaml",
+      "--base-spec",
+      "config/metric_spec_v2.yaml"
+    ],
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "command": [
+      "lab9.eval",
+      "--shape",
+      "fixed",
+      "--spec",
+      "config/metric_spec_v2.yaml",
+      "--out",
+      "reports/eval_v2_fixed.json"
+    ],
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "command": [
+      "lab9.gate",
+      "--pr",
+      "reports/eval_v2_fixed.json",
+      "--baseline",
+      "reports/baseline_v2.json",
+      "--spec",
+      "config/metric_spec_v2.yaml",
+      "--base-spec",
+      "config/metric_spec_v2.yaml"
+    ],
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "command": [
+      "lab9.eval",
+      "--shape",
+      "honest_refactor",
+      "--spec",
+      "config/metric_spec_v2.yaml",
+      "--out",
+      "reports/eval_v2_honest_refactor.json"
+    ],
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "command": [
+      "lab9.gate",
+      "--pr",
+      "reports/eval_v2_honest_refactor.json",
+      "--baseline",
+      "reports/baseline_v2.json",
+      "--spec",
+      "config/metric_spec_v2.yaml",
+      "--base-spec",
+      "config/metric_spec_v2.yaml"
+    ],
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "command": [
+      "lab9.eval",
+      "--shape",
+      "seeded_regression",
+      "--spec",
+      "config/metric_spec_v2.yaml",
+      "--out",
+      "reports/eval_v2_seeded_regression.json"
+    ],
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "command": [
+      "lab9.gate",
+      "--pr",
+      "reports/eval_v2_seeded_regression.json",
+      "--baseline",
+      "reports/baseline_v2.json",
+      "--spec",
+      "config/metric_spec_v2.yaml",
+      "--base-spec",
+      "config/metric_spec_v2.yaml"
+    ],
+    "exit": 1,
+    "expected": 1
+  },
+  {
+    "command": [
+      "lab9.eval",
+      "--shape",
+      "slice_regression",
+      "--spec",
+      "config/metric_spec_v2.yaml",
+      "--out",
+      "reports/eval_v2_slice_regression.json"
+    ],
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "command": [
+      "lab9.gate",
+      "--pr",
+      "reports/eval_v2_slice_regression.json",
+      "--baseline",
+      "reports/baseline_v2.json",
+      "--spec",
+      "config/metric_spec_v2.yaml",
+      "--base-spec",
+      "config/metric_spec_v2.yaml"
+    ],
+    "exit": 1,
+    "expected": 1
+  },
+  {
+    "command": [
+      "lab9.eval",
+      "--shape",
+      "flaky_regression",
+      "--spec",
+      "config/metric_spec_v2.yaml",
+      "--out",
+      "reports/eval_v2_flaky_regression.json"
+    ],
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "command": [
+      "lab9.gate",
+      "--pr",
+      "reports/eval_v2_flaky_regression.json",
+      "--baseline",
+      "reports/baseline_v2.json",
+      "--spec",
+      "config/metric_spec_v2.yaml",
+      "--base-spec",
+      "config/metric_spec_v2.yaml"
+    ],
+    "exit": 1,
+    "expected": 1
+  },
+  {
+    "command": [
+      "lab9.mutation",
+      "--spec",
+      "config/metric_spec_v2.yaml",
+      "--aa",
+      "66,77,88,99,110"
+    ],
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "command": [
+      "lab9.mutation",
+      "--spec",
+      "config/metric_spec_v2.yaml",
+      "--baseline",
+      "reports/baseline_v2.json"
+    ],
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "command": [
+      "lab9.traps",
+      "--pr",
+      "reports/eval_v2_slice_regression.json",
+      "--baseline",
+      "reports/baseline_v2.json",
+      "--spec",
+      "config/metric_spec_v2.yaml"
+    ],
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "command": [
+      "lab9.gate",
+      "--pr",
+      "reports/traps/evaluator_errors_as_nan.json",
+      "--baseline",
+      "reports/baseline_v2.json",
+      "--spec",
+      "config/metric_spec_v2.yaml"
+    ],
+    "exit": 1,
+    "expected": 1
+  },
+  {
+    "command": [
+      "lab9.gate",
+      "--pr",
+      "reports/traps/dropped_failing_rows.json",
+      "--baseline",
+      "reports/baseline_v2.json",
+      "--spec",
+      "config/metric_spec_v2.yaml"
+    ],
+    "exit": 1,
+    "expected": 1
+  },
+  {
+    "command": [
+      "lab9.gate",
+      "--pr",
+      "reports/traps/cherry_picked_seeds.json",
+      "--baseline",
+      "reports/baseline_v2.json",
+      "--spec",
+      "config/metric_spec_v2.yaml"
+    ],
+    "exit": 1,
+    "expected": 1
+  },
+  {
+    "command": [
+      "lab9.gate",
+      "--pr",
+      "reports/traps/loosened_spec.json",
+      "--baseline",
+      "reports/baseline_v2.json",
+      "--spec",
+      "reports/traps/loosened_spec.spec.yaml",
+      "--base-spec",
+      "config/metric_spec_v2.yaml"
+    ],
+    "exit": 1,
+    "expected": 1
+  }
+]

@@ -1,0 +1,274 @@
+{
+  "tone": {
+    "n": 100,
+    "precision": 0.857,
+    "recall": 0.8,
+    "kappa": 0.757,
+    "confusion": {
+      "tp": 24,
+      "fp": 4,
+      "fn": 6,
+      "tn": 66
+    },
+    "observed_fail_rate": 0.28,
+    "corrected_fail_rate": 0.3,
+    "disagreements": [
+      {
+        "item_id": "H-008",
+        "reply": "Em đã hoàn tiền cho anh rồi nha, anh check giúp em.",
+        "human": "FAIL",
+        "judge": "PASS",
+        "note": "xưng 'em' + 'nha', quá suồng sã với khách; judge coi là thân thiện"
+      },
+      {
+        "item_id": "H-017",
+        "reply": "Dạ, bạn ơi LogiX đã hoàn 25.000đ cho đơn O-606 rồi nha.",
+        "human": "FAIL",
+        "judge": "PASS",
+        "note": "xưng 'bạn' với khách lớn tuổi; judge coi là thân thiện"
+      },
+      {
+        "item_id": "H-029",
+        "reply": "Dạ, vui lòng chờ. Hệ thống đang xử lý, không cần nhắn thêm.",
+        "human": "FAIL",
+        "judge": "PASS",
+        "note": "giọng ra lệnh ('không cần nhắn thêm'); judge chỉ thấy 'Dạ, vui lòng'"
+      },
+      {
+        "item_id": "H-042",
+        "reply": "Dạ, đơn O-808 đã hoàn 120.000đ. Tiền về trong 3–5 ngày ạ.",
+        "human": "PASS",
+        "judge": "FAIL",
+        "note": "ngắn nhưng đủ ý; judge phạt vì 'thiếu xin lỗi'"
+      },
+      {
+        "item_id": "H-051",
+        "reply": "Dạ, LogiX đã refund 90.000đ cho đơn O-202 ạ.",
+        "human": "PASS",
+        "judge": "FAIL",
+        "note": "dùng từ 'refund' — CS LogiX cho phép; judge phạt vì tiếng Anh"
+      },
+      {
+        "item_id": "H-063",
+        "reply": "Dạ, LogiX đã hoàn 20.000đ và sẽ hoàn thêm cho anh/chị ạ.",
+        "human": "FAIL",
+        "judge": "PASS",
+        "note": "hứa 'sẽ hoàn thêm' ngoài kết quả hệ thống"
+      },
+      {
+        "item_id": "H-070",
+        "reply": "Dạ, LogiX đã hoàn 90.000đ cho đơn O-909 ạ 😂😂",
+        "human": "FAIL",
+        "judge": "PASS",
+        "note": "emoji không phù hợp ngữ cảnh khiếu nại"
+      },
+      {
+        "item_id": "H-081",
+        "reply": "Dạ, đơn O-107 chưa đủ điều kiện hoàn theo chính sách hiện hành ạ.",
+        "human": "PASS",
+        "judge": "FAIL",
+        "note": "nhãn người sai (đọc nhầm ticket) — judge đúng, sửa nhãn"
+      },
+      {
+        "item_id": "H-088",
+        "reply": "Dạ, dạ, LogiX đã hoàn 40.000đ cho đơn O-233 ạ.",
+        "human": "PASS",
+        "judge": "FAIL",
+        "note": "lặp 'Dạ' do lỗi gõ; người cho qua, judge phạt"
+      },
+      {
+        "item_id": "H-094",
+        "reply": "Da, LogiX da hoan 40.000đ cho don O-341, xin loi vi su bat tien.",
+        "human": "FAIL",
+        "judge": "PASS",
+        "note": "dịch máy, mất dấu tiếng Việt"
+      }
+    ],
+    "passed": true
+  },
+  "helpful": {
+    "n": 100,
+    "precision": 1.0,
+    "recall": 0.3,
+    "kappa": 0.375,
+    "confusion": {
+      "tp": 9,
+      "fp": 0,
+      "fn": 21,
+      "tn": 70
+    },
+    "observed_fail_rate": 0.09,
+    "corrected_fail_rate": 0.3,
+    "disagreements": [
+      {
+        "item_id": "HL-015",
+        "reply": "Dạ, LogiX đã hoàn 55.000đ cho đơn O-112 ạ.",
+        "human": "FAIL",
+        "judge": "PASS",
+        "human_failure": "sai tiền",
+        "note": "ledger ghi 40.000đ"
+      },
+      {
+        "item_id": "HL-016",
+        "reply": "Dạ, LogiX thành thật xin lỗi anh/chị vì sự bất tiện này và rất trân trọng sự kiên nhẫn của anh/chị. LogiX đã hoàn 55.000đ cho đơn O-404. Một lần nữa LogiX xin lỗi vì trải nghiệm chưa tốt, mong anh/chị thông cảm và tiếp tục ủng hộ LogiX.",
+        "human": "FAIL",
+        "judge": "PASS",
+        "human_failure": "sai tiền",
+        "note": "ledger ghi 35.000đ"
+      },
+      {
+        "item_id": "HL-020",
+        "reply": "Dạ, LogiX đã hoàn 90.000đ cho đơn O-303 ạ.",
+        "human": "FAIL",
+        "judge": "PASS",
+        "human_failure": "sai tiền",
+        "note": "ledger ghi 120.000đ"
+      },
+      {
+        "item_id": "HL-028",
+        "reply": "Dạ, LogiX thành thật xin lỗi anh/chị vì sự bất tiện này và rất trân trọng sự kiên nhẫn của anh/chị. LogiX đã hoàn 50.000đ cho đơn O-677. LogiX thành thật xin lỗi anh/chị vì sự bất tiện này và rất trân trọng sự kiên nhẫn của anh/chị.",
+        "human": "FAIL",
+        "judge": "PASS",
+        "human_failure": "sai tiền",
+        "note": "ledger ghi 35.000đ"
+      },
+      {
+        "item_id": "HL-035",
+        "reply": "Dạ, Một lần nữa LogiX xin lỗi vì trải nghiệm chưa tốt, mong anh/chị thông cảm và tiếp tục ủng hộ LogiX. LogiX đã hoàn 50.000đ cho đơn O-303. LogiX thành thật xin lỗi anh/chị vì sự bất tiện này và rất trân trọng sự kiên nhẫn của anh/chị.",
+        "human": "FAIL",
+        "judge": "PASS",
+        "human_failure": "sai tiền",
+        "note": "ledger ghi 35.000đ"
+      },
+      {
+        "item_id": "HL-041",
+        "reply": "Dạ, Một lần nữa LogiX xin lỗi vì trải nghiệm chưa tốt, mong anh/chị thông cảm và tiếp tục ủng hộ LogiX. LogiX đã hoàn 60.000đ cho đơn O-909. LogiX thành thật xin lỗi anh/chị vì sự bất tiện này và rất trân trọng sự kiên nhẫn của anh/chị.",
+        "human": "FAIL",
+        "judge": "PASS",
+        "human_failure": "sai tiền",
+        "note": "ledger ghi 40.000đ"
+      },
+      {
+        "item_id": "HL-043",
+        "reply": "Dạ, LogiX rất tiếc vì đơn hàng đã đến trễ và xin lỗi anh/chị vì đã phải chờ đợi. LogiX đã hoàn 35.000đ cho đơn O-202. LogiX rất tiếc vì đơn hàng đã đến trễ và xin lỗi anh/chị vì đã phải chờ đợi.",
+        "human": "FAIL",
+        "judge": "PASS",
+        "human_failure": "sai tiền",
+        "note": "ledger ghi 20.000đ"
+      },
+      {
+        "item_id": "HL-047",
+        "reply": "Ok bạn, đơn O-515 xử lý rồi nhé.",
+        "human": "FAIL",
+        "judge": "PASS",
+        "human_failure": "sai xưng hô",
+        "note": ""
+      },
+      {
+        "item_id": "HL-053",
+        "reply": "Dạ, LogiX rất tiếc vì đơn hàng đã đến trễ và xin lỗi anh/chị vì đã phải chờ đợi. LogiX đã hoàn 110.000đ cho đơn O-562. Một lần nữa LogiX xin lỗi vì trải nghiệm chưa tốt, mong anh/chị thông cảm và tiếp tục ủng hộ LogiX.",
+        "human": "FAIL",
+        "judge": "PASS",
+        "human_failure": "sai tiền",
+        "note": "ledger ghi 90.000đ"
+      },
+      {
+        "item_id": "HL-058",
+        "reply": "Dạ, LogiX rất tiếc vì đơn hàng đã đến trễ và xin lỗi anh/chị vì đã phải chờ đợi. LogiX đã hoàn 40.000đ cho đơn O-107. Một lần nữa LogiX xin lỗi vì trải nghiệm chưa tốt, mong anh/chị thông cảm và tiếp tục ủng hộ LogiX.",
+        "human": "FAIL",
+        "judge": "PASS",
+        "human_failure": "sai tiền",
+        "note": "ledger ghi 25.000đ"
+      },
+      {
+        "item_id": "HL-062",
+        "reply": "Dạ, LogiX đã hoàn 55.000đ cho đơn O-458 ạ.",
+        "human": "FAIL",
+        "judge": "PASS",
+        "human_failure": "sai tiền",
+        "note": "ledger ghi 40.000đ"
+      },
+      {
+        "item_id": "HL-070",
+        "reply": "Dạ, Một lần nữa LogiX xin lỗi vì trải nghiệm chưa tốt, mong anh/chị thông cảm và tiếp tục ủng hộ LogiX. LogiX đã hoàn 50.000đ cho đơn O-781. Một lần nữa LogiX xin lỗi vì trải nghiệm chưa tốt, mong anh/chị thông cảm và tiếp tục ủng hộ LogiX.",
+        "human": "FAIL",
+        "judge": "PASS",
+        "human_failure": "sai tiền",
+        "note": "ledger ghi 30.000đ"
+      },
+      {
+        "item_id": "HL-072",
+        "reply": "Dạ, LogiX thành thật xin lỗi anh/chị vì sự bất tiện này và rất trân trọng sự kiên nhẫn của anh/chị. LogiX đã hoàn 50.000đ cho đơn O-781. LogiX thành thật xin lỗi anh/chị vì sự bất tiện này và rất trân trọng sự kiên nhẫn của anh/chị.",
+        "human": "FAIL",
+        "judge": "PASS",
+        "human_failure": "sai tiền",
+        "note": "ledger ghi 30.000đ"
+      },
+      {
+        "item_id": "HL-074",
+        "reply": "Dạ, Một lần nữa LogiX xin lỗi vì trải nghiệm chưa tốt, mong anh/chị thông cảm và tiếp tục ủng hộ LogiX. LogiX đã hoàn 140.000đ cho đơn O-458. Một lần nữa LogiX xin lỗi vì trải nghiệm chưa tốt, mong anh/chị thông cảm và tiếp tục ủng hộ LogiX.",
+        "human": "FAIL",
+        "judge": "PASS",
+        "human_failure": "sai tiền",
+        "note": "ledger ghi 120.000đ"
+      },
+      {
+        "item_id": "HL-087",
+        "reply": "Dạ, LogiX đã hoàn 60.000đ cho đơn O-202 ạ.",
+        "human": "FAIL",
+        "judge": "PASS",
+        "human_failure": "sai tiền",
+        "note": "ledger ghi 90.000đ"
+      },
+      {
+        "item_id": "HL-090",
+        "reply": "Dạ, LogiX rất tiếc vì đơn hàng đã đến trễ và xin lỗi anh/chị vì đã phải chờ đợi. LogiX đã hoàn 155.000đ cho đơn O-233. Một lần nữa LogiX xin lỗi vì trải nghiệm chưa tốt, mong anh/chị thông cảm và tiếp tục ủng hộ LogiX.",
+        "human": "FAIL",
+        "judge": "PASS",
+        "human_failure": "sai tiền",
+        "note": "ledger ghi 120.000đ"
+      },
+      {
+        "item_id": "HL-091",
+        "reply": "Ok bạn, đơn O-233 xử lý rồi nhé.",
+        "human": "FAIL",
+        "judge": "PASS",
+        "human_failure": "sai xưng hô",
+        "note": ""
+      },
+      {
+        "item_id": "HL-096",
+        "reply": "Dạ, LogiX thành thật xin lỗi anh/chị vì sự bất tiện này và rất trân trọng sự kiên nhẫn của anh/chị. LogiX đã hoàn 50.000đ cho đơn O-341. LogiX thành thật xin lỗi anh/chị vì sự bất tiện này và rất trân trọng sự kiên nhẫn của anh/chị.",
+        "human": "FAIL",
+        "judge": "PASS",
+        "human_failure": "sai tiền",
+        "note": "ledger ghi 35.000đ"
+      },
+      {
+        "item_id": "HL-097",
+        "reply": "Ok bạn, đơn O-202 xử lý rồi nhé.",
+        "human": "FAIL",
+        "judge": "PASS",
+        "human_failure": "sai xưng hô",
+        "note": ""
+      },
+      {
+        "item_id": "HL-098",
+        "reply": "Dạ, LogiX thành thật xin lỗi anh/chị vì sự bất tiện này và rất trân trọng sự kiên nhẫn của anh/chị. LogiX đã hoàn 120.000đ cho đơn O-808. LogiX thành thật xin lỗi anh/chị vì sự bất tiện này và rất trân trọng sự kiên nhẫn của anh/chị.",
+        "human": "FAIL",
+        "judge": "PASS",
+        "human_failure": "sai tiền",
+        "note": "ledger ghi 90.000đ"
+      },
+      {
+        "item_id": "HL-100",
+        "reply": "Dạ, LogiX đã hoàn 55.000đ cho đơn O-112 ạ.",
+        "human": "FAIL",
+        "judge": "PASS",
+        "human_failure": "sai tiền",
+        "note": "ledger ghi 35.000đ"
+      }
+    ],
+    "passed": false
+  }
+}
